@@ -23,3 +23,12 @@ jobs:
       run: dotnet test --verbosity normal /p:CollectCoverage=true /p:CoverletOutputFormat=lcov
     - name: Code coverage
       uses: codecov/codecov-action@v3.1.0
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        directory: ./coverage/reports/
+        fail_ci_if_error: true
+        files: ./coverage1.xml,./coverage2.xml
+        flags: unittests
+        name: codecov-umbrella
+        path_to_write_report: ./coverage/codecov_report.txt
+        verbose: true
