@@ -99,7 +99,7 @@ namespace github_actions_demo
                 case "^":
                     return true;
                 default:
-                    return false;
+                    return true;
             }
         }
     }
